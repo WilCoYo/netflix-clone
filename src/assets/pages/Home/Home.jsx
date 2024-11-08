@@ -1,13 +1,31 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import './Home.css'
 import Navbar from '../../../components/Navbar/Navbar'
 import hero_banner from '/hero-image.jpg'
 import hero_title from '/hero-image-title.png'
 import play_icon from '/play-icon.svg'
 import info_icon from '/info-icon.svg'
+import TitleCards from '../../../components/TitleCards/TitleCards';
 
 
 function Home() {
+
+  const [topAnime, setTopAnime] = useState([]);
+
+  const GetTopAnime = async () => {
+    const temp = await fetch(`https://api.jikan.moe/v4/top/anime?filter=airing&page=1&limit=6`) //switch to airing//
+      .then(res => res.json());
+
+    setTopAnime(temp.data.slice(0, 6)); 
+  }
+
+  useEffect(() => {
+    GetTopAnime();
+
+  }, []);
+
+
   return (
     <div className='home'>
       <Navbar/>
@@ -29,6 +47,21 @@ function Home() {
               <button className='btn dark-btn'><img src={info_icon} alt=''/>More Info</button>
             </div>
           </div>
+        </div>
+
+
+        <div className="popular-section">
+        <h3>Top Anime</h3>
+            <div className="card-list">
+              {topAnime.map(anime => (
+                
+                <TitleCards 
+                  anime={anime}
+                  key={anime.id} 
+                />
+
+              ))} 
+            </div>
         </div>
     </div>
   )

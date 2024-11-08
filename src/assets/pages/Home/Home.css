@@ -8,6 +8,11 @@
     -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
 }
 
+
+.hero {
+    height: 100vh;
+}
+
 .hero-caption {
     position: absolute;
     width: 100%;
@@ -28,6 +33,7 @@
     margin-left: 5rem;
     margin-bottom: 1.25rem;
 }
+
 
 .hero-btns {
     display: flex;
@@ -67,5 +73,20 @@
 .hero-btns .btn.dark-btn:hover {
     color: #fff;
     background: #6d6d6e66;
+}
+
+.popular-section {
+    width: 100%;
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    text-wrap: wrap;
+    padding-top: 1rem;
+}
+
+.popular-section {
+    width: 100%;
 }
 

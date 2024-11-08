@@ -1,0 +1,28 @@
+.popular-section {
+    padding: 1rem 3rem;
+    font-size: 3rem;
+    text-align: start;
+    overflow-x: auto;
+}
+
+.anime-card {
+    width: 12%;
+}
+
+.anime-card:hover {
+    scale: 1.025;
+}
+
+.anime-card h3 {
+    text-wrap: wrap;
+    font-size: 1.5rem;
+}
+
+.anime-card img {
+	width: 100%;
+}
+
+.anime-card a {
+    text-decoration: none;
+    color: #fff;
+}
